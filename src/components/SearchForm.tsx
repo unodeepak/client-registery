@@ -27,18 +27,18 @@ const SearchForm = ({
           type="text"
           value={search}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="border border-red-900 text-sm px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400"
+          className="border border-red-900 text-sm px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-red-400 text-black"
         />
       </div>
 
       <div className="flex flex-col w-full sm:w-1/3">
         <label
-          htmlFor="birthday"
+          htmlFor="Date Of Birth "
           className="text-sm text-gray-700 font-medium mb-1">
-          Birthday
+          Date Of Birth
         </label>
         <input
-          id="birthday"
+          id="Date of Birth"
           type="date"
           value={birthday}
           onChange={(e) => onBirthdayChange(e.target.value)}

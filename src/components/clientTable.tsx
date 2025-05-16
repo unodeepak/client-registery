@@ -61,7 +61,7 @@ const ClientTable = ({ initialData = [] }: Props) => {
   );
 
   return (
-    <div className="bg-white shadow rounded-lg p-4">
+    <div className="bg-white text-black shadow rounded-lg p-4">
       <SearchForm
         search={search}
         type={type}
@@ -105,12 +105,16 @@ const ClientTable = ({ initialData = [] }: Props) => {
                 {paginatedClients.map((client, idx) => (
                   <tr
                     key={`${client.account}-${idx}`}
-                    className={idx % 2 === 0 ? "bg-white" : "bg-gray-100"}>
+                    className={
+                      idx % 2 === 0
+                        ? "bg-white , text-black"
+                        : "bg-gray-100 , text-black"
+                    }>
                     <td className="px-4 py-2">{client.name}</td>
                     <td className="px-4 py-2">{client.birthday}</td>
                     <td className="px-4 py-2">{client.type}</td>
                     <td className="px-4 py-2">{client.account}</td>
-                    <td className="px-4 py-2">
+                    <td className="px-4 py-2 text-" >
                       ${client.balance.toLocaleString()}
                     </td>
                     <td className="px-4 py-2 text-red-600 space-x-2">
