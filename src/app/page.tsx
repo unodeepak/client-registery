@@ -1,9 +1,16 @@
 import ClientTable from "../components/clientTable";
 
 export default async function HomePage() {
-  const res = await fetch("http://localhost:3000/api/clients", {
+  const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
+  const res = await fetch(`${baseURL}/api/clients`, {
     cache: "no-store",
   });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch clients");
+  }
+
   const clients = await res.json();
 
   return (
